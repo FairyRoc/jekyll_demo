@@ -5,7 +5,7 @@ header-img: img/home-bg.jpg
 email: 616005688@qq.com
 description: "我的个人博客"
 keyword: ""
-url: "http://fairyroc.github.io"              # your host, for absolute URL
+url: "https://fairyroc.github.io"              # your host, for absolute URL
 baseurl: "/blog"         # for example, '/blog' if your blog hosted on 'host/blog'
 
 
