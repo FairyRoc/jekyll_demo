@@ -1,12 +1,15 @@
 ---
 layout:     post
-title:      "Welcome to Hux Blog"
-subtitle:   " \"Hello World, Hello Blog\""
-date:       2015-01-29 12:00:00
-author:     "Hux"
+title:      "第一篇博客"
+subtitle:   " \"Hello Blog\""
+date:       2016-08-30 09:39:00
+author:     "Roc"
 header-img: "img/post-bg-2015.jpg"
+categories:  life
 tags:
     - 生活
+    - 技术积累
+    - 前端开发
 ---
 
 > “Yeah It's on. ”
@@ -14,18 +17,17 @@ tags:
 
 ## 前言
 
-Hux 的 Blog 就这么开通了。
+> 欢迎自己来到这个世界!
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;随着大学毕业和入职，我逐渐成为了别人眼中的「程序猿」，“很多事情一开始往往想不到”
+这句话很多人耳熟能详，但我的经历告诉我，应该没人能想好一切，并毫厘不差掌控自己的
+一生。就像高考的报考一样，阴差阳错的选择了计算机，毕业后从千万毕业生中脱颖而出，顺利的入职唯品会，又到这家创业公司一样，一切的一切都充满了戏剧性。可以说如果是上天安排我学习计算机，那么不如说我自己小时候收到哥哥的耳濡目染喜欢计算机。于是有了这一切，包括这个博客。那么正式开始吧
 
 [跳过废话，直接看技术实现 ](#build)
 
 
 
-2015 年，Hux 总算有个地方可以好好写点东西了。
-
-
-作为一个程序员， Blog 这种轮子要是挂在大众博客程序上就太没意思了。一是觉得大部分 Blog 服务都太丑，二是觉得不能随便定制不好玩。之前因为太懒没有折腾，结果就一直连个写 Blog 的地儿都没有。
-
-在玩了一段时间知乎之后，答题的快感又激起了我开博客的冲动。之前的[个人网站](http://huangxuan.me/portfolio)是作品集形式的（现在集成进来了），并不适合用来写博文，一不做二不休，花一天搞一个吧！
+对博客知之甚少，有错误之处还望不吝赐教。
 
 
 <p id = "build"></p>
@@ -35,45 +37,43 @@ Hux 的 Blog 就这么开通了。
 
 接下来说说搭建这个博客的技术细节。  
 
-正好之前就有关注过 [GitHub Pages](https://pages.github.com/) + [Jekyll](http://jekyllrb.com/) 快速 Building Blog 的技术方案，非常轻松时尚。
+正好之前就有关注过 [GitHub Pages](https://pages.github.com/)，自己在github上面生成了几个页面，感觉也还不错，但是缺少了一些灵活性。
+那么这一次使用了jekyll来生成页面，就很好地解决了上述问题。（知乎了一圈，
+在OCT和JEKYLL中间选择了JEKYLL）
 
-其优点非常明显：
+JEKYLL的几个优点：
 
-* **Markdown** 带来的优雅写作体验
-* 非常熟悉的 Git workflow ，**Git Commit 即 Blog Post**
+* **Markdown** 带来的优雅写作体验（这种格式已经很火了，不必多说，每个人都应该学习）
+* 非常熟悉的 Git workflow
 * 利用 GitHub Pages 的域名和免费无限空间，不用自己折腾主机
-	* 如果需要自定义域名，也只需要简单改改 DNS 加个 CNAME 就好了
+* 如果需要自定义域名，也只需要简单改改 DNS 加个 CNAME 就好了
 * Jekyll 的自定制非常容易，基本就是个模版引擎
 
-
-本来觉得最大的缺点可能是 GitHub 在国内访问起来太慢，所以第二天一起床就到 GitCafe(Chinese GitHub Copy) 迁移了一个[镜像](http://huxpro.gitcafe.io)出来，结果还是巨慢。
-
-哥哥可是个前端好嘛！ 果断开 Chrome DevTool 查了下网络请求，原来是 **pending 在了 Google Fonts** 上，页面渲染一直被阻塞到请求超时为止，难怪这么慢。  
-忍痛割爱，只好把 Web Fonts 去了（反正超时看到的也只能是 fallback ），果然一下就正常了，而且 GitHub 和 GitCafe 对比并没有感受到明显的速度差异，虽然 github 的 ping 值明显要高一些，达到了 300ms，于是用 DNSPOD 优化了一下速度。
+github速度目前看来还算满意，就是git在翻墙环境下上传略坑（希望有过解决经历的人给予帮助）。
 
 
 
 ---
 
-配置的过程中也没遇到什么坑，基本就是 Git 的流程，相当顺手
+配置的过程中主要的坑来源于ruby，我在winows下面安装时遇到了各种问题,尤其看到了这篇文章，我心都碎了[新人千万不要在windows下使用ruby](https://ruby-china.org/topics/1020)
 
-大的 Jekyll 主题上直接 fork 了 Clean Blog（这个主题也相当有名，就不多赘述了。唯一的缺点大概就是没有标签支持，于是我给它补上了。）
-
-本地调试环境需要 `gem install jekyll`，结果 rubygem 的源居然被墙了……后来手动改成了我大淘宝的镜像源才成功
-
-Theme 的 CSS 是基于 Bootstrap 定制的，看得不爽的地方直接在 Less 里改就好了（平时更习惯 SCSS 些），**不过其实我一直觉得 Bootstrap 在移动端的体验做得相当一般，比我在淘宝参与的团队 CSS 框架差多了……**所以为了体验，也补了不少 CSS 进去
-
-最后就进入了耗时反而最长的**做图、写字**阶段，也算是进入了**写博客**的正轨，因为是类似 Hack Day 的方式去搭这个站的，所以折腾折腾着大半夜就过去了。
-
-第二天考虑中文字体的渲染，fork 了 [Type is Beautiful](http://www.typeisbeautiful.com/) 的 `font` CSS，调整了字号，适配了 Win 的渣渲染，中英文混排效果好多了。
+具体思路：
+1.安装[ruby for windows](http://rubyinstaller.org/)下载后自行安装，默认路径既可。
+2.安装[devkit](http://rubyinstaller.org/)，解压到C盘根目录（方便好找），运行两个命令[quick start](https://github.com/oneclick/rubyinstaller/wiki/Development-Kit)，官网帮助里面有详细介绍和解释，篇幅有限不赘述。
+3.gem install jekyll -v 2.4.0 版本兼容性。
+4.然后就是官网[jekyll](http://jekyll.bootcss.com/),照猫画虎跑通了一个demo
+5.在知乎搜索了一圈，发现了几个比较好的theme，于是顺手fork了两个，后面没有在仔细挑选（选择恐惧症），就直接使用了这款clean bolg 派生出来的版本了。
+6.最后一步也是目前正在进行的，写自己第一篇博客。中间遇到一些零散的坑放在后记了。
 
 
 ## 后记
+坑：
+jekyll的日期转换（现在只懂一些皮毛，参照官网可以使用，底层原理后面慢慢探究）[date](http://joshbranchaud.com/blog/2012/12/24/Date-Formatting-in-Jekyll.html)
+部署路径在_config.yml中的baseurl-url搭配使用(发布路径)
+duoshuo的配置和注册[多说](http://fairyroc.duoshuo.com/admin/)
+参考文章：
+[http://pwnny.cn/original/2016/06/26/MakeBlog.html](http://pwnny.cn/original/2016/06/26/MakeBlog.html)
 
-回顾这个博客的诞生，纯粹是出于个人兴趣。在知乎相关问题上回答并获得一定的 star 后，我决定把这个博客主题当作一个小小的开源项目来维护。
 
-在经历 v1.0 - v1.5 的蜕变后，这个博客主题愈发完整，不但增加了诸多 UI 层的优化（opinionated）；在代码层面，更加丰富的配置项也使得这个主题拥有了更好的灵活性与可拓展性。而作为一个开源项目，我也积极的为其完善文档与解决 issue。
 
-如果你恰好逛到了这里，希望你也能喜欢这个博客主题。
-
-—— Hux 后记于 2015.10
+—— Roc 后记于 2016.08
