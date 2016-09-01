@@ -1,14 +1,15 @@
 ---
 layout:     post
 title:      "Example Post"
-subtitle:   "不适合人类阅读，非常水的自我笔记"
-date:       2015-04-14
-author:     "Hux"
+subtitle:   "攻略backbone-MISSION1"
+date:       2016-09-01
+author:     "Roc"
 header-img: "img/post-bg-unix-linux.jpg"
+categories: backbone
 tags:
-    - OS
-    - Unix
-    - Linux
+    - backbone
+    - js
+    - js框架
 ---
 
 > This document is not completed and will be updated anytime.
