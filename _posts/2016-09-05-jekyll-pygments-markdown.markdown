@@ -74,12 +74,14 @@ pygmentize -f html -a .highlight -S default > pygments.css
 然后就是解决配置里面的解析器，由于每次上传redcarpet都会导致GITHUB发邮件给我，神烦，于是乎我就改用了支持的highlight:true，和karmdown解析器
 
 配置如下：
+
 ```yml
 highlighter: rouge
 markdown: kramdown
 kramdown:
   input: GFM   
 ```
+
 ## 参考文献
 1.[http://jekyll-windows.juthilo.com/3-syntax-highlighting/](http://jekyll-windows.juthilo.com/3-syntax-highlighting/)
 
