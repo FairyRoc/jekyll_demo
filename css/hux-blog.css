@@ -1,3 +1,8 @@
+/*!
+ * Hux Blog v1.0.0 (http://huxpro.github.io)
+ * Copyright 2016 Hux
+ */
+
 @media (min-width: 1200px) {
   .post-container,
   .sidebar-container {
@@ -133,6 +138,10 @@ hr.small {
   margin: 15px auto;
   border-width: 4px;
   border-color: white;
+}
+.highlight pre {
+  background: #272822;
+  color: #f8f8f2;
 }
 pre,
 .table-responsive {
