@@ -1,81 +1,63 @@
 ---
 layout:     post
-title:      "HELLO BLOG"
-subtitle:   "第一篇博客"
-date:       2016/8/29 17:54:34
+title:      "大巧不工--pygments的使用与配置"
+subtitle:   "pygments-markdown"
+date:       2016/9/5 16:46:46
 author:     "roc"
 header-img: "img/post-bg-js-module.jpg"
 tags:
-    - 技术宅
-    - 前端开发
-    - 博客
-    - jekyll
-    - GitHub Pages
+  - jekyll
 ---
 
 
 
 ## 前言
 
-> 欢迎自己来到这个世界!asdasdas
+> 让工作更有效率
 
+虽然有一些急于求成，但是依然咬牙把jekyll咬下来了，其实按部就班和匆忙上阵各有各的好处，看人
+也看事，具体问题具体分析才能活的睿智从容。
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;随着大学毕业和入职，我逐渐成为了别人眼中的「程序猿」，“很多事情一开始往往想不到”
-这句话很多人耳熟能详，但我的经历告诉我，应该没人能想好一切，并毫厘不差掌控自己的
-一生。就像高考的报考一样，阴差阳错的选择了计算机，毕业后从千万毕业生中脱颖而出，顺利的入职唯品会，又到这家创业公司一样，一切的一切都充满了戏剧性。可以说如果是上天安排我学习计算机，那么不如说我自己小时候收到哥哥的耳濡目染喜欢计算机。于是有了这一切，包括这个博客。那么正式开始吧
+## 正文
 
-```html
-<div class="name">aosijdoasjd</div>
-<div>aosijdoasjd
-<ul><li>
-</li>
-<li><li>asdasd</li></li></ul>
-</div>
-```
+本文主要目的是记录今天的学习成果-[pygments](http://pygments.org/)Python实现的highlight
+。有人可能就问了，一个高亮能学一天你也是够拼的。没错，我想说的是即使是有众多文献和强大的stackoverflow加持，也是学了一天。又有人问了，不是插件只讲使用么，为什么要学这么多？这个问题留给大家自己思考:)
 
-```html
-//CommonJS
-<div>aoisdjoasijdia</div>
-var Employee = require("types/Employee");
+首先确定了高亮需求后，在官网发现如下资源
+> Code snippet highlightingPermalink
 
-function Programmer (){
-    //do something
-}  
+> Jekyll has built in support for syntax highlighting of over 60 languages thanks to Rouge. Rouge is the default highlighter in Jekyll 3 and above. To use it in Jekyll 2, set highlighter to rouge and ensure the rouge gem is installed properly.
 
-Programmer.prototype = new Employee();
+> Alternatively, you can use Pygments to highlight your code snippets. To use Pygments, you must have Python installed on your system, have the pygments.rb gem installed and set highlighter to pygments in your site’s configuration file. Pygments supports over 100 languages
 
-//如果 require call 是异步的，那么肯定 error
-//因为在执行这句前 Employee 模块肯定来不及加载进来
-```
+一段来自官网的例子：ruby的代码高亮
 
-`​``
-html
-<a href="#">Hello world</a>
-`​``
+{ % highlight ruby % }
 
-`​``
-js
-console.log(hello world);
-function getName(){        //定义函数
-   console.log(this.name)//输出当前作用域的name属性值
-};
-var bb={
-name:'sisi'   //定义对象，有一个name属性
-};
-getName.bind(bb)();
-`​``
+def foo
 
+   puts 'foo'
 
+end
 
+{ % endhighlight % }
 
-于是，JavaScript 的模块化成为迫切需求。在 ES6 Module 来临之前，JavaScript 社区提供了强大支持，尝试在现有的运行环境下，实现模块的效果。
+{% highlight ruby %}
+def foo
+  puts 'foo'
+end
+{% endhighlight %}
 
+随即开始更新jekyll gem install jekyll(默认是3.3.1版本)，一连串惊天的阴谋就从这里开始了
+：更新后语法不兼容
+- && 首当其冲，&&要写成and
+- \{\% 里面的 变量不能再写成\{\{\}\}形式，而是直接引用\%\}，不过还好中途有很多warning可以调试。
 
----
+全部fix后，高亮的第一步就是修改config，highlight选项，jekyll其实是默认提供了highlight的，但是我比较喜欢monokai的风格，所以被迫折腾pygments，这也是本文的重点。
 
-## Catalog
+官网给出了明确说明，jekyll3自带rough可以使用，只要<pre>highlight:rough</pre>pre>
 
-
+To render a code block with syntax highlighting, surround your code as follows:
 1.  [CommonJS & Node](#commonjs--node)
 3.  [History](#history)
 4.  [RequireJS & AMD](#requirejs--amd)
