@@ -93,6 +93,15 @@
 <!-- Custom Theme JavaScript -->
 <script src="{{ "/js/hux-blog.min.js " | prepend: site.baseurl }}"></script>
 
+<script type="text/javascript">
+  
+//    window.onscroll = function(){
+//      var scroll= $(document).scrollTop();
+//    if(scroll>=542){$("#sidebar").css('position','fixed')}
+
+// else {$("#sidebar").css('position','relative')}
+//     }
+</script>
 
 <!-- async load function -->
 <script>
@@ -129,7 +138,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("/js/jquery.tagcloud.js",function(){
+        async("{{site.baseurl}}/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
