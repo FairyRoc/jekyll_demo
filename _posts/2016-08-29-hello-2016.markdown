@@ -23,7 +23,40 @@ tags:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;随着大学毕业和入职，我逐渐成为了别人眼中的「程序猿」，“很多事情一开始往往想不到”
 这句话很多人耳熟能详，但我的经历告诉我，应该没人能想好一切，并毫厘不差掌控自己的
-一生。就像高考的报考一样，阴差阳错的选择了计算机，毕业后从千万毕业生中脱颖而出，顺利的入职唯品会，又到这家创业公司一样，一切的一切都充满了戏剧性。可以说如果是上天安排我学习计算机，那么不如说我自己小时候收到哥哥的耳濡目染喜欢计算机。于是有了这一切，包括这个博客。那么正式开始吧ioajsdoajsiodjoasdiosij
+一生。就像高考的报考一样，阴差阳错的选择了计算机，毕业后从千万毕业生中脱颖而出，顺利的入职唯品会，又到这家创业公司一样，一切的一切都充满了戏剧性。可以说如果是上天安排我学习计算机，那么不如说我自己小时候收到哥哥的耳濡目染喜欢计算机。于是有了这一切，包括这个博客。那么正式开始吧
+
+```
+js
+//CommonJS
+
+var Employee = require("types/Employee");
+
+function Programmer (){
+    //do something
+}  
+
+Programmer.prototype = new Employee();
+
+//如果 require call 是异步的，那么肯定 error
+//因为在执行这句前 Employee 模块肯定来不及加载进来
+```
+
+`​``
+html
+<a href="#">Hello world</a>
+`​``
+
+`​``
+js
+console.log(hello world);
+function getName(){        //定义函数
+   console.log(this.name)//输出当前作用域的name属性值
+};
+var bb={
+name:'sisi'   //定义对象，有一个name属性
+};
+getName.bind(bb)();
+`​``
 
 
 
@@ -66,6 +99,35 @@ a.doSomething()         // 等上一句执行完才会执行
 exports.b = function(){ // 暴露 b 函数接口
   // do something
 }
+```
+```js
+//CommonJS
+
+var Employee = require("types/Employee");
+
+function Programmer (){
+    //do something
+}  
+
+Programmer.prototype = new Employee();
+
+//如果 require call 是异步的，那么肯定 error
+//因为在执行这句前 Employee 模块肯定来不及加载进来
+```
+
+```js
+//CommonJS
+
+var Employee = require("types/Employee");
+
+function Programmer (){
+    //do something
+}  
+
+Programmer.prototype = new Employee();
+
+//如果 require call 是异步的，那么肯定 error
+//因为在执行这句前 Employee 模块肯定来不及加载进来
 ```
 
 `exports`是一个内置对象，就像`require`是一个内置加载函数一样。如果你希望直接赋值一个完整的对象或者构造函数，覆写`module.exports`就可以了。
