@@ -8,8 +8,6 @@ keyword: ""
 url: "https://fairyroc.github.io"              # your host, for absolute URL
 baseurl: "/jekyll_demo"         # for example, '/blog' if your blog hosted on 'host/blog'
 
-
-
 # SNS settings
 RSS: false
 weibo_username:     roc
@@ -42,8 +40,15 @@ gems: [jekyll-paginate]
 # document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
 kramdown:
-  input: GFM                            # use Github Flavored Markdown !important
-
+  input: GFM                          # use Github Flavored Markdown !important
+# markdown: redcarpet
+# redcarpet:
+#   extensions:
+#     - fenced_code_blocks
+#     - no_intra_emphasis
+#     - strikethrough
+#     - autolink
+#     - tables
 
 
 # Disqus settings
